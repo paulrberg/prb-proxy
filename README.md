@@ -1,4 +1,13 @@
-# PRBProxy [![Coverage Status](https://coveralls.io/repos/github/paulrberg/prb-proxy/badge.svg?branch=main)](https://coveralls.io/github/paulrberg/prb-proxy?branch=main) [![Styled with Prettier](https://img.shields.io/badge/code_style-prettier-ff69b4.svg)](https://prettier.io) [![Commitizen Friendly](https://img.shields.io/badge/commitizen-friendly-brightgreen.svg)](http://commitizen.github.io/cz-cli/) [![license: Unlicense](https://img.shields.io/badge/license-Unlicense-yellow.svg)](https://unlicense.org/)
+# PRBProxy [![GitHub Actions][gha-badge]][gha] [![Coverage Status][coveralls-badge]][coveralls] [![Styled with Prettier][prettier-badge]][prettier] [![License: Unlicense][license-badge]][license]
+
+[gha]: https://github.com/paulrberg/prb-proxy/actions
+[gha-badge]: https://github.com/paulrberg/prb-proxy/actions/workflows/integration.yml/badge.svg
+[coveralls]: https://coveralls.io/github/paulrberg/prb-proxy
+[coveralls-badge]: https://coveralls.io/repos/github/paulrberg/prb-proxy/badge.svg?branch=main
+[prettier]: https://prettier.io
+[prettier-badge]: https://img.shields.io/badge/Code_Style-Prettier-ff69b4.svg
+[license]: https://unlicense.org/
+[license-badge]: https://img.shields.io/badge/License-Unlicense-blue.svg
 
 **Proxy contract to compose Ethereum transactions on behalf of the owner.** Think of this as a smart wallet that enables
 the execution of multiple contract calls in one transaction. Externally owned accounts (EOAs) do not have this feature; they are
