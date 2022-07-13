@@ -1,0 +1,83 @@
+{
+	"compiler": {
+		"version": "0.8.12+commit.f00d7308"
+	},
+	"language": "Solidity",
+	"output": {
+		"abi": [
+			{
+				"inputs": [
+					{
+						"internalType": "bytes32",
+						"name": "seed",
+						"type": "bytes32"
+					},
+					{
+						"internalType": "address",
+						"name": "deployer",
+						"type": "address"
+					},
+					{
+						"internalType": "address",
+						"name": "factory",
+						"type": "address"
+					},
+					{
+						"internalType": "bytes",
+						"name": "bytecode",
+						"type": "bytes"
+					}
+				],
+				"name": "computeAddress",
+				"outputs": [
+					{
+						"internalType": "address",
+						"name": "",
+						"type": "address"
+					}
+				],
+				"stateMutability": "pure",
+				"type": "function"
+			}
+		],
+		"devdoc": {
+			"author": "Paul Razvan Berg",
+			"details": "Forked from OpenZeppelin https://github.com/OpenZeppelin/openzeppelin-contracts/blob/v4.5.0/contracts/utils/Create2.sol",
+			"kind": "dev",
+			"methods": {},
+			"title": "Create2Utility",
+			"version": 1
+		},
+		"userdoc": {
+			"kind": "user",
+			"methods": {},
+			"version": 1
+		}
+	},
+	"settings": {
+		"compilationTarget": {
+			"contracts/Create2Utility.sol": "Create2Utility"
+		},
+		"evmVersion": "london",
+		"libraries": {},
+		"metadata": {
+			"bytecodeHash": "ipfs"
+		},
+		"optimizer": {
+			"enabled": true,
+			"runs": 800
+		},
+		"remappings": []
+	},
+	"sources": {
+		"contracts/Create2Utility.sol": {
+			"keccak256": "0x155a75a55a18fc3f73482694137bae78a00b0ef9e1e203e5d9988af305b14867",
+			"license": "Unlicense",
+			"urls": [
+				"bzz-raw://6c4fdd7534c6c12e331997d90bb1cf4af137d0f4521fba336848e2a9c2a4b87c",
+				"dweb:/ipfs/QmUpr7Rbsj275VT76gJNUAhsub2apanWTVNuQi7zAYdDmu"
+			]
+		}
+	},
+	"version": 1
+}

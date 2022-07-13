@@ -1,0 +1,2 @@
+@prb/contracts/=lib/prb-contracts/src/
+forge-std/=lib/forge-std/src/

@@ -1,0 +1,255 @@
+{
+	"compiler": {
+		"version": "0.8.12+commit.f00d7308"
+	},
+	"language": "Solidity",
+	"output": {
+		"abi": [
+			{
+				"anonymous": false,
+				"inputs": [
+					{
+						"indexed": true,
+						"internalType": "address",
+						"name": "origin",
+						"type": "address"
+					},
+					{
+						"indexed": true,
+						"internalType": "address",
+						"name": "deployer",
+						"type": "address"
+					},
+					{
+						"indexed": true,
+						"internalType": "address",
+						"name": "owner",
+						"type": "address"
+					},
+					{
+						"indexed": false,
+						"internalType": "bytes32",
+						"name": "seed",
+						"type": "bytes32"
+					},
+					{
+						"indexed": false,
+						"internalType": "bytes32",
+						"name": "salt",
+						"type": "bytes32"
+					},
+					{
+						"indexed": false,
+						"internalType": "address",
+						"name": "proxy",
+						"type": "address"
+					}
+				],
+				"name": "DeployProxy",
+				"type": "event"
+			},
+			{
+				"inputs": [],
+				"name": "deploy",
+				"outputs": [
+					{
+						"internalType": "address payable",
+						"name": "proxy",
+						"type": "address"
+					}
+				],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "owner",
+						"type": "address"
+					}
+				],
+				"name": "deployFor",
+				"outputs": [
+					{
+						"internalType": "address payable",
+						"name": "proxy",
+						"type": "address"
+					}
+				],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "eoa",
+						"type": "address"
+					}
+				],
+				"name": "getNextSeed",
+				"outputs": [
+					{
+						"internalType": "bytes32",
+						"name": "nextSeed",
+						"type": "bytes32"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "proxy",
+						"type": "address"
+					}
+				],
+				"name": "isProxy",
+				"outputs": [
+					{
+						"internalType": "bool",
+						"name": "result",
+						"type": "bool"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "version",
+				"outputs": [
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			}
+		],
+		"devdoc": {
+			"author": "Paul Razvan Berg",
+			"kind": "dev",
+			"methods": {
+				"deploy()": {
+					"details": "Sets \"msg.sender\" as the owner of the proxy.",
+					"returns": {
+						"proxy": "The address of the newly deployed proxy contract."
+					}
+				},
+				"deployFor(address)": {
+					"params": {
+						"owner": "The owner of the proxy."
+					},
+					"returns": {
+						"proxy": "The address of the newly deployed proxy contract."
+					}
+				},
+				"getNextSeed(address)": {
+					"params": {
+						"eoa": "The externally owned account that will own the proxy."
+					}
+				},
+				"isProxy(address)": {
+					"params": {
+						"proxy": "The address of the proxy to make the check for."
+					}
+				}
+			},
+			"stateVariables": {
+				"nextSeeds": {
+					"details": "Internal mapping to track the next seed to be used by an EOA."
+				},
+				"proxies": {
+					"details": "Internal mapping to track all deployed proxies."
+				},
+				"version": {
+					"details": "This is stored in the factory rather than the proxy to save gas for end users."
+				}
+			},
+			"title": "PRBProxyFactory",
+			"version": 1
+		},
+		"userdoc": {
+			"events": {
+				"DeployProxy(address,address,address,bytes32,bytes32,address)": {
+					"notice": "EVENTS ///"
+				}
+			},
+			"kind": "user",
+			"methods": {
+				"deploy()": {
+					"notice": "Deploys a new proxy via CREATE2."
+				},
+				"deployFor(address)": {
+					"notice": "Deploys a new proxy via CREATE2, for the given owner."
+				},
+				"getNextSeed(address)": {
+					"notice": "Gets the next seed that will be used to deploy the proxy."
+				},
+				"isProxy(address)": {
+					"notice": "Mapping to track all deployed proxies."
+				},
+				"version()": {
+					"notice": "The release version of PRBProxy."
+				}
+			},
+			"version": 1
+		}
+	},
+	"settings": {
+		"compilationTarget": {
+			"contracts/PRBProxyFactory.sol": "PRBProxyFactory"
+		},
+		"evmVersion": "london",
+		"libraries": {},
+		"metadata": {
+			"bytecodeHash": "ipfs"
+		},
+		"optimizer": {
+			"enabled": true,
+			"runs": 800
+		},
+		"remappings": []
+	},
+	"sources": {
+		"contracts/IPRBProxy.sol": {
+			"keccak256": "0xdff1edd912c2f4badbe6194b334322cfe445d4b337a60318f0bde70ed15ee57c",
+			"license": "Unlicense",
+			"urls": [
+				"bzz-raw://9b5aa8aab20225d0972f8ffd2d4be80b2b468497db522a0b1400cd8888a461e0",
+				"dweb:/ipfs/QmWiEEs9CZaBvSGJDGCAuEGsHBf2XVYAs6DUzRLEkMT5wn"
+			]
+		},
+		"contracts/IPRBProxyFactory.sol": {
+			"keccak256": "0xbfc0fd448f80f8b981ceba381692da17fd6086a7219d5e4423e34ea9e0184c27",
+			"license": "Unlicense",
+			"urls": [
+				"bzz-raw://f0f9fcb91a97fe39c13340ea19cffc3a6de468c5e2e6d6264dd9b4a721e51a52",
+				"dweb:/ipfs/QmW4cpEpwXp1SJ7tbzcyyG5yDYpkydPBXCpuPPmt3AMagv"
+			]
+		},
+		"contracts/PRBProxy.sol": {
+			"keccak256": "0xe843201d30762bfc02f81b7c2b2dc32fec34c09a74f5f3110283d09ff4ea5132",
+			"license": "Unlicense",
+			"urls": [
+				"bzz-raw://17a22080ceff0773214eadaa5aa311b22be8b67fc9eb323ede0aa864e76472ca",
+				"dweb:/ipfs/QmZeeTj1ivEqJ74UgJdsQKMKVT72mLdPkUkwFboYDrHwjL"
+			]
+		},
+		"contracts/PRBProxyFactory.sol": {
+			"keccak256": "0x99fde6d55bbf32f367b431e90afdf66d23707243581da101774ed6f2d4b7972d",
+			"license": "Unlicense",
+			"urls": [
+				"bzz-raw://ef836f97e9d132a7dd3f0b9cddd6ad85ea323803f654f0c21a14fbe94e3145e7",
+				"dweb:/ipfs/QmcwHz4nc3suqKX6EXeci2Usqvwp9gpXbirphg89d65EKu"
+			]
+		}
+	},
+	"version": 1
+}

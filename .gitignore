@@ -5,41 +5,17 @@
 !.yarn/plugins
 !.yarn/sdks
 !.yarn/versions
-**/.nyc_output
-**/artifacts
-**/build
 **/cache
-**/coverage
-**/coverage-contracts
-**/coverage-ts
-**/dist
 **/node_modules
+**/out
 
 # files
 *.env
 *.log
-*.tsbuildinfo
-coverage.json
+.DS_Store
+.pnp.*
 npm-debug.log*
+src/CHANGELOG.md
+src/README.md
 yarn-debug.log*
 yarn-error.log*
-
-# types
-src/types/*
-!src/types/common.ts
-!src/types/IPRBProxy.ts
-!src/types/IPRBProxyFactory.ts
-!src/types/IPRBProxyRegistry.ts
-!src/types/PRBProxy.ts
-!src/types/PRBProxyFactory.ts
-!src/types/PRBProxyRegistry.ts
-
-# factories
-!src/types/factories
-src/types/factories/*
-!src/types/factories/IPRBProxy__factory.ts
-!src/types/factories/IPRBProxyFactory__factory.ts
-!src/types/factories/IPRBProxyRegistry__factory.ts
-!src/types/factories/PRBProxy__factory.ts
-!src/types/factories/PRBProxyFactory__factory.ts
-!src/types/factories/PRBProxyRegistry__factory.ts

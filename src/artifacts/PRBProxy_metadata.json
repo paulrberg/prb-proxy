@@ -1,0 +1,410 @@
+{
+	"compiler": {
+		"version": "0.8.7+commit.e28d00a7"
+	},
+	"language": "Solidity",
+	"output": {
+		"abi": [
+			{
+				"inputs": [],
+				"stateMutability": "nonpayable",
+				"type": "constructor"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "owner",
+						"type": "address"
+					},
+					{
+						"internalType": "address",
+						"name": "caller",
+						"type": "address"
+					},
+					{
+						"internalType": "address",
+						"name": "target",
+						"type": "address"
+					},
+					{
+						"internalType": "bytes4",
+						"name": "selector",
+						"type": "bytes4"
+					}
+				],
+				"name": "PRBProxy__ExecutionNotAuthorized",
+				"type": "error"
+			},
+			{
+				"inputs": [],
+				"name": "PRBProxy__ExecutionReverted",
+				"type": "error"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "owner",
+						"type": "address"
+					},
+					{
+						"internalType": "address",
+						"name": "caller",
+						"type": "address"
+					}
+				],
+				"name": "PRBProxy__NotOwner",
+				"type": "error"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "originalOwner",
+						"type": "address"
+					},
+					{
+						"internalType": "address",
+						"name": "newOwner",
+						"type": "address"
+					}
+				],
+				"name": "PRBProxy__OwnerChanged",
+				"type": "error"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "target",
+						"type": "address"
+					}
+				],
+				"name": "PRBProxy__TargetInvalid",
+				"type": "error"
+			},
+			{
+				"anonymous": false,
+				"inputs": [
+					{
+						"indexed": true,
+						"internalType": "address",
+						"name": "target",
+						"type": "address"
+					},
+					{
+						"indexed": false,
+						"internalType": "bytes",
+						"name": "data",
+						"type": "bytes"
+					},
+					{
+						"indexed": false,
+						"internalType": "bytes",
+						"name": "response",
+						"type": "bytes"
+					}
+				],
+				"name": "Execute",
+				"type": "event"
+			},
+			{
+				"anonymous": false,
+				"inputs": [
+					{
+						"indexed": true,
+						"internalType": "address",
+						"name": "oldOwner",
+						"type": "address"
+					},
+					{
+						"indexed": true,
+						"internalType": "address",
+						"name": "newOwner",
+						"type": "address"
+					}
+				],
+				"name": "TransferOwnership",
+				"type": "event"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "target",
+						"type": "address"
+					},
+					{
+						"internalType": "bytes",
+						"name": "data",
+						"type": "bytes"
+					}
+				],
+				"name": "execute",
+				"outputs": [
+					{
+						"internalType": "bytes",
+						"name": "response",
+						"type": "bytes"
+					}
+				],
+				"stateMutability": "payable",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "envoy",
+						"type": "address"
+					},
+					{
+						"internalType": "address",
+						"name": "target",
+						"type": "address"
+					},
+					{
+						"internalType": "bytes4",
+						"name": "selector",
+						"type": "bytes4"
+					}
+				],
+				"name": "getPermission",
+				"outputs": [
+					{
+						"internalType": "bool",
+						"name": "",
+						"type": "bool"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "minGasReserve",
+				"outputs": [
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "owner",
+				"outputs": [
+					{
+						"internalType": "address",
+						"name": "",
+						"type": "address"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "newMinGasReserve",
+						"type": "uint256"
+					}
+				],
+				"name": "setMinGasReserve",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "envoy",
+						"type": "address"
+					},
+					{
+						"internalType": "address",
+						"name": "target",
+						"type": "address"
+					},
+					{
+						"internalType": "bytes4",
+						"name": "selector",
+						"type": "bytes4"
+					},
+					{
+						"internalType": "bool",
+						"name": "permission",
+						"type": "bool"
+					}
+				],
+				"name": "setPermission",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "newOwner",
+						"type": "address"
+					}
+				],
+				"name": "transferOwnership",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"stateMutability": "payable",
+				"type": "receive"
+			}
+		],
+		"devdoc": {
+			"author": "Paul Razvan Berg",
+			"kind": "dev",
+			"methods": {
+				"execute(address,bytes)": {
+					"details": "Requirements: - The caller must be either an owner or an envoy. - `target` must be a deployed contract. - The owner cannot be changed during the DELEGATECALL.",
+					"params": {
+						"data": "Function selector plus ABI encoded data.",
+						"target": "The address of the target contract."
+					},
+					"returns": {
+						"response": "The response received from the target contract."
+					}
+				},
+				"setMinGasReserve(uint256)": {
+					"details": "Requirements: - The caller must be the owner.",
+					"params": {
+						"newMinGasReserve": "The new minimum gas reserve."
+					}
+				},
+				"setPermission(address,address,bytes4,bool)": {
+					"details": "It is not an error to reset a permission on the same (envoy,target,selector) tuple multiple types. Requirements: - The caller must be the owner.",
+					"params": {
+						"envoy": "The address of the envoy account.",
+						"permission": "The boolean permission to set.",
+						"selector": "The 4 byte function selector on the target contract.",
+						"target": "The address of the target contract."
+					}
+				},
+				"transferOwnership(address)": {
+					"details": "Requirements: - The caller must be the owner.",
+					"params": {
+						"newOwner": "The address of the new owner account."
+					}
+				}
+			},
+			"stateVariables": {
+				"minGasReserve": {
+					"details": "This prevents the proxy from becoming unusable if EVM opcode gas costs change in the future."
+				}
+			},
+			"title": "PRBProxy",
+			"version": 1
+		},
+		"userdoc": {
+			"errors": {
+				"PRBProxy__ExecutionNotAuthorized(address,address,address,bytes4)": [
+					{
+						"notice": "Emitted when the caller is not the owner."
+					}
+				],
+				"PRBProxy__ExecutionReverted()": [
+					{
+						"notice": "Emitted when execution reverted with no reason."
+					}
+				],
+				"PRBProxy__NotOwner(address,address)": [
+					{
+						"notice": "Emitted when the caller is not the owner."
+					}
+				],
+				"PRBProxy__OwnerChanged(address,address)": [
+					{
+						"notice": "Emitted when the owner is changed during the DELEGATECALL."
+					}
+				],
+				"PRBProxy__TargetInvalid(address)": [
+					{
+						"notice": "Emitted when passing an EOA or an undeployed contract as the target."
+					}
+				]
+			},
+			"events": {
+				"Execute(address,bytes,bytes)": {
+					"notice": "EVENTS ///"
+				}
+			},
+			"kind": "user",
+			"methods": {
+				"constructor": {
+					"notice": "CONSTRUCTOR ///"
+				},
+				"execute(address,bytes)": {
+					"notice": "Delegate calls to the target contract by forwarding the call data. Returns the data it gets back, including when the contract call reverts with a reason or custom error."
+				},
+				"getPermission(address,address,bytes4)": {
+					"notice": "Returns a boolean flag that indicates whether the envoy has permission to call the given target contract and function selector."
+				},
+				"minGasReserve()": {
+					"notice": "How much gas to reserve for running the remainder of the \"execute\" function after the DELEGATECALL."
+				},
+				"owner()": {
+					"notice": "The address of the owner account or contract."
+				},
+				"setMinGasReserve(uint256)": {
+					"notice": "Sets a new value for the minimum gas reserve."
+				},
+				"setPermission(address,address,bytes4,bool)": {
+					"notice": "Gives or takes a permission from an envoy to call the given target contract and function selector on behalf of the owner."
+				},
+				"transferOwnership(address)": {
+					"notice": "Transfers the owner of the contract to a new account."
+				}
+			},
+			"version": 1
+		}
+	},
+	"settings": {
+		"compilationTarget": {
+			"contracts/PRBProxy.sol": "PRBProxy"
+		},
+		"evmVersion": "london",
+		"libraries": {},
+		"metadata": {
+			"bytecodeHash": "ipfs"
+		},
+		"optimizer": {
+			"enabled": false,
+			"runs": 200
+		},
+		"remappings": []
+	},
+	"sources": {
+		"contracts/IPRBProxy.sol": {
+			"keccak256": "0xdff1edd912c2f4badbe6194b334322cfe445d4b337a60318f0bde70ed15ee57c",
+			"license": "Unlicense",
+			"urls": [
+				"bzz-raw://9b5aa8aab20225d0972f8ffd2d4be80b2b468497db522a0b1400cd8888a461e0",
+				"dweb:/ipfs/QmWiEEs9CZaBvSGJDGCAuEGsHBf2XVYAs6DUzRLEkMT5wn"
+			]
+		},
+		"contracts/PRBProxy.sol": {
+			"keccak256": "0xe843201d30762bfc02f81b7c2b2dc32fec34c09a74f5f3110283d09ff4ea5132",
+			"license": "Unlicense",
+			"urls": [
+				"bzz-raw://17a22080ceff0773214eadaa5aa311b22be8b67fc9eb323ede0aa864e76472ca",
+				"dweb:/ipfs/QmZeeTj1ivEqJ74UgJdsQKMKVT72mLdPkUkwFboYDrHwjL"
+			]
+		}
+	},
+	"version": 1
+}
